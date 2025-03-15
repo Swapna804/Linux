@@ -1,0 +1,56 @@
+#within function we can access parameters as follows:
+$1 -->First argument
+$2 -->Second argument
+$@ -->All arguments
+$* -->All arguments
+$# -->total no of arguments
+$0 -->Script name not function name
+
+==============================================================================
+#To access function parameters
+#! /bin/bash
+IFS='-'
+test()
+{
+  echo "First argument: $1"
+  echo "Second argument: $2"
+  echo "All arguments  : $@"
+  echo "All arguments  : $*"
+  echo "total no of arguments : $#"
+  echo "Script name : $0"
+}
+
+test 10 20 30 40
+
+===============================================================================
+#! /bin/bash
+wish()
+{ 
+    if [ $# -eq 0 ]; then
+        echo "Hi guest
+	else
+	    echo "hi $1"
+	fi
+}
+wish 
+wish Swapna
+=============================================================================
+# 2integer number as parameter and perform arithmetic operations
+
+#! /bin/bash 
+calc() 
+{ 
+    if [ $# -ne 2 ]; then 
+        echo "You should pass exactly 2 arguments" 
+    else 
+        a=$1 
+        b=$2 
+        echo "$a+$b = $((a+b))" 
+        echo "$a-$b = $((a-b))" 
+        echo "$a*$b = $((a*b))" 
+        echo "$a/$b = $((a/b))" 
+        echo 
+    fi 
+} 
+calc 10 
+calc 20 10 
