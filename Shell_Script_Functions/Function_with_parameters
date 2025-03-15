@@ -54,3 +54,24 @@ calc()
 } 
 calc 10 
 calc 20 10 
+
+
+-----------------------------------------------------------------------------------
+#print all parameters
+
+#! /bin/bash 
+parameters()
+{
+    if [ $# -eq 0 ]; then
+	    echo "no parameters"
+	else
+	    echo " all parameters"
+		for i in $@
+		do
+		   echo $i
+		done
+	fi
+}
+parameters 
+parameters 10 20 30
+
