@@ -1,0 +1,27 @@
+program1:
+-------------------------------------------------------
+#! /bin/bash 
+ 
+#defining a function 
+function wish() 
+{ 
+      echo "Hello Friends... Good Evening" 
+} 
+wish # calling a function 
+wish 
+
+program2:
+-------------------------------------------------------
+#! /bin/bash
+function f1()
+{
+    echo "Good morning"
+	f2
+}
+f2()
+{
+    echo "hi everyone"
+}
+f1
+f2
+# Note: before calling function it should be defined
