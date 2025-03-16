@@ -1,0 +1,140 @@
+#max of 2 given numbers
+
+#! /bin/bash 
+max()
+{
+if [ $1 -gt $2 ]; then
+    echo "$1 is greater"
+else
+    echo "$2 is greater"
+	
+fi
+}
+read -p "enter first number:" n1
+read -p "enter ssecond number:" n2
+max $n1 $n2
+
+======================================================================
+#max of 3 given numbers
+
+#! /bin/bash 
+max()
+{
+a=$1
+b=$2
+c=$3
+if [ $a -gt $b -a $a -gt $c ]; then
+    echo "$a is greater"
+elif [ $b -gt $c ]; then
+    echo "$b is greater"
+else
+    echo "$c is greater"
+fi
+
+}
+read -p "enter first number:" n1
+read -p "enter ssecond number:" n2
+read -p "enter third number:" n3
+
+max $n1 $n2 $n3
+================================================================================
+#factorial of given number
+
+#! /bin/bash
+factorial()
+{
+original= $1
+n=$1
+fact=1
+while [ $n -gt 1 ]; then
+  do
+    let fact=fact*n
+    let n--
+  done
+  echo "factorial of $original : $factorial"
+}
+read -p "enter number:" num
+factorial $num
+
+==========================================================================
+
+#! /bin/bash
+factorial()
+{
+original= $1
+n=$1
+fact=1
+while [ $n -gt 1 ]; then
+  do
+    let fact=fact*n
+    let n--
+  done
+  echo "factorial of $original : $factorial"
+}
+for i in {1..10}
+   do
+      factorial $i
+   done
+==========================================================================
+# write function to check whether given no is odd or even
+
+#! /bin/bash
+even_odd()
+{
+    n=$1
+    if [ $[n%2] -eq 0 ]; then
+	    echo "even"
+	else
+	    echo "odd"
+	fi
+}
+read -p "enter number:" n
+even_odd $n
+=========================================================================
+#write function to check whether given no is positive or not
+#! /bin/bash
+positive_neg()
+{
+     n=$1
+     if [ $n -gt 0 ]; then
+         echo "+ve"
+      elif [ $n -lt 0 ]; then
+         echo "-ve"
+      else
+         echo "zero"
+      fi
+}
+read-p "enter number:" n
+positive_neg $n
+
+==========================================================================
+#Prime numbers
+# chck given number is prime or not
+
+#! /bin/bash
+prime_check()
+{
+    n=$1
+	  if [ $n -le 1 ]; then
+	    echo " $n not prime number"
+    else
+	    is_prime="yes"
+		for ((i=2;i<n;i++)
+		do
+		  if [ $[n%i] -eq 0 ]; then
+		      echo "not prime number $n"
+			    is_prime="no"
+			    break
+	    fi
+	  	done
+	    if [ $is_prime = "yes" ]; then
+       	    echo "prime number $n"
+	    fi
+	fi
+}
+read -p "enter number:" n
+prime_check $n
+
+===============================================================================================
+
+
